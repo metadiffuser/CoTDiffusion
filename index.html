@@ -256,6 +256,102 @@ reward model can serve as classifiers for evaluation, with gradient to guide the
           src="./public/video/video1.gif"
           />  -->
         </div>
+
+
+      <a class="anchor" id="tr2-a"></a>
+      <section class="details">
+        <h2>Dual guide in the Trajectory Generation</h2>
+        <!-- <p>
+          The core idea of our work is to simplify task-solving by enabling the
+          low-level agent to explicitly focus only on low-level skills such as
+          object manipulation and leave the high-level planning to be solved by
+          a high-level agent. The objective of the low-level agent now is to
+          simply follow the high-level agent as closely as possible.
+        </p> -->
+        <p style="font-family: 'Times New Roman'""> Previous work (Janner et al., 2022a) trains an extra reward predictor to evaluate the accumulative return of generated trajectories and utilizes the gradient of return as a guidance in the sampling process of diffusion model, to encourage the generated trajectories to achieve high return. However, during meta-testing for unseen tasks, the conditional generated trajectories may not always obey dynamics constraints due to the aggressive guidance aim for high return, making it difficult for the planner to follow the expected trajectories during the interaction with the environment. Therefore, we propose a dual-guide to enhance the dynamics consistency of generated trajectories while encouraging the high return simultaneously.
+
+        </p>
+
+        <div style="display: flex; margin: auto; width: 95%">
+          <p style="font-family: 'Times New Roman'; width: 25%;%">       <strong>Generated Trajectories.</strong>  </p>
+          <p style="font-family: 'Times New Roman'; width: 25%;%">       <strong>Real Trajecories.</strong> </p>
+          <p style="font-family: 'Times New Roman'; width: 25%;%">       <strong>Generated Trajectories.</strong>  </p>
+          <p style="font-family: 'Times New Roman'; width: 25%;%">       <strong>Real Trajecories.</strong> </p>
+        </div>
+
+
+        <div style="display: flex; margin: auto; width: 95%">
+          <!-- <img
+          style="width: 90%"
+          src="./public/images/framework.png"
+          /> -->
+          
+          <!-- br /> -->
+          <img
+          style="width: 40%;%"
+          src="./public/images/walker_without.gif"
+          /> 
+          <img
+          style="width: 40%;%"
+          src="./public/images/walker_with.gif"
+          /> 
+
+        </div>
+          <br />
+        <div style="display: flex; margin: auto; width: 95%">
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Walker-Params without dual-guide. </p>
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Walker-Params with dual-guide. </p>
+
+        </div>
+
+        <div style="display: flex; margin: auto; width: 95%">
+          <!-- <img
+          style="width: 90%"
+          src="./public/images/framework.png"
+          /> -->
+          
+          <!-- br /> -->
+          <img
+          style="width: 40%;%"
+          src="./public/images/hopper_without.gif"
+          /> 
+          <img
+          style="width: 40%;%"
+          src="./public/images/hopper_with.gif"
+          /> 
+
+        </div>
+          <br />
+        <div style="display: flex; margin: auto; width: 95%">
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Hopper-Params without dual-guide. </p>
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Hopper-Params with dual-guide. </p>
+
+        </div>
+
+        <div style="display: flex; margin: auto; width: 95%">
+          <!-- <img
+          style="width: 90%"
+          src="./public/images/framework.png"
+          /> -->
+          
+          <!-- br /> -->
+          <img
+          style="width: 40%;%"
+          src="./public/images/cheetah_without.gif"
+          /> 
+          <img
+          style="width: 40%;%"
+          src="./public/images/cheetah_with.gif"
+          /> 
+
+        </div>
+          <br />
+        <div style="display: flex; margin: auto; width: 95%">
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Cheetah-Vel without dual-guide. </p>
+          <p style="font-family: 'Times New Roman'; width: 50%;%">       Cheetah-Vel with dual-guide. </p>
+
+        </div>
+
         <!-- <h2>Method</h2>
         <p>
           Below shows an illustration of the abstract-to-executable trajectory
